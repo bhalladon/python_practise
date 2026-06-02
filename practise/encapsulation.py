@@ -6,7 +6,7 @@ A python class is an example of encapsulation
 
 class bankAccount:
     def __init__(self, account_holder, balance):
-        self.accont_holder = account_holder
+        self.account_holder = account_holder
         self.__balance = balance # Double underscore at the start makes it a private attribute
 
     def deposit(self, amount):
@@ -21,4 +21,26 @@ class bankAccount:
 account = bankAccount("Rajiv Bhalla", 1000)
 account.deposit(500)
 print(account.get_balance())
-print(account.__balance)
+# print(account.__balance)
+
+class Employee:
+
+    def __init__(self):
+        self.__salary = 50000
+
+    def get_salary(self):
+        return self.__salary
+
+    def set_salary(self, salary):
+
+        if salary > 0:
+            self.__salary = salary
+        else:
+            print("Invalid salary")
+
+
+emp = Employee()
+
+emp.set_salary(-10000)
+
+print(emp.get_salary())
